@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Background */
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #ff4f81, #12001a);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Main Container */
+.container {
+  text-align: center;
+  max-width: 650px;
+  padding: 20px;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 8px;
+  opacity: 0.95;
+}
+
+/* Fade Animation */
+.fade-in {
+  animation: fadeIn 2s ease forwards;
+}
+
+.delay {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌄 Slideshow - Landscape Cinematic */
+.slideshow {
+  margin: 28px auto;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+}
+
+.slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 FULL IMAGE, NO CROP */
+  background: black;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* Letter */
+.letter {
+  margin-top: 22px;
+  font-size: 1.1em;
+  line-height: 1.7;
+  min-height: 150px;
+  padding: 0 10px;
+}
+
+/* Button */
+button {
+  margin-top: 25px;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #ff4f81;
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+/* Floating Hearts */
+.hearts span {
+  position: absolute;
+  bottom: -30px;
+  font-size: 22px;
+  animation: floatUp linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100vh) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Proposal Overlay */
+.proposal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+}
+
+.proposal h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Mobile Friendly */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  .letter {
+    font-size: 1em;
+  }
+}
